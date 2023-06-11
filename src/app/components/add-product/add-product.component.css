@@ -1,0 +1,30 @@
+#labelName {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 550;
+    font-size: 18px;
+}
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(65, 65, 65);
+    margin-bottom: -5px;
+}
+#x {
+    margin-left: 435px;
+    margin-top: -49px; 
+}
+.box-head {
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #4169e1;
+    margin-bottom: 10px;
+}
+.add-product-section {
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    padding: 20px;
+}
+#submit {
+    font-family: 'Rubik', sans-serif;
+}

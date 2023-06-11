@@ -1,0 +1,43 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <section [ngClass]="ShowAddProduct || ViewProduct || EditProduct ? 'col-md-7' : 'col-md-12'">
+            <div class="product-header">
+                <h1>Product List <span *ngIf="!isLoading" (click)="refresh()" style="cursor: pointer"><i class="fa-solid fa-arrows-rotate"></i></span><i *ngIf="isLoading" class="fa-solid fa-sync fa-spin"></i><span></span></h1>
+                <a routerLink="add-product"><button type="button" *ngIf="!ShowAddProduct" (click)="OpenShowAddProduct()" class="btn btn-primary" id="fontFamily">Add Product</button></a>
+            </div>
+            <table class="table">
+                <thead class="table-secondary">
+                    <tr id="fontFamily">
+                        <th scope="col">Product ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Availability</th>
+                        <th scope="col">Product Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products; let i = index"
+                        (click)="selectProduct(i, product)"
+                        [ngClass]="rowIndex == i ? 'active' : ''" id="fontFamily">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.unitPrice | currency: "LKR "}}</td>
+                        <td>
+                            <p *ngIf="product.quantity <= 50">Insufficient Inventory</p>
+                            <p *ngIf="product.quantity > 50">Sufficient Inventory</p>
+                        </td>
+                        <td>
+                            <a routerLink="product-details"><button type="button" [disabled]="rowIndex != i" (click)="OpenViewProducts()" id="eye"><i class="fa-regular fa-eye"></i></button></a>
+                            <a routerLink="edit-product"><button type="button" [disabled]="rowIndex != i" (click)="OpenEditProductView()" id="pen"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                        </td> 
+                    </tr>
+                </tbody> 
+            </table>
+        </section>
+        <section class="col-md-5" *ngIf="ShowAddProduct || ViewProduct || EditProduct">
+            <app-add-product *ngIf="ShowAddProduct" (cancelAddView)="hideAddProducts()"></app-add-product>
+            <app-edit-product *ngIf="EditProduct" [product]="selectedProduct" (cancelEditView)="closeEditView()" (productAddEvent)="updateProductList()"></app-edit-product>
+            <app-view-product *ngIf="ViewProduct" [product]="selectedProduct" (cancelViewProduct)="closeViewProducts()"></app-view-product>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px 5px 0px;
+}
+table tbody tr td {
+    cursor: pointer;
+}
+table tbody tr td {
+    cursor: pointer;
+}
+table tbody tr.active td {
+    background-color: #c8daf8;
+}
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(65, 65, 65);
+    margin-bottom: 0px;
+}
+table {
+    border-collapse: inherit;
+}
+.fa-arrows-rotate {
+    color: black;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+#fontFamily {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 550;
+    font-size: 18px;
+}
+#eye {
+    margin-left: 10px;
+}
+#pen {
+    margin-left: 10px;
+}

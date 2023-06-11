@@ -1,0 +1,10 @@
+.bg-primary {
+    background-color: rgb(32, 148, 250) !important;
+}
+#s {
+    font-family: 'Unbounded', cursive;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 25px;
+    font-weight: 800;
+}

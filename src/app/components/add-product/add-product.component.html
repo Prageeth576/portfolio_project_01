@@ -1,0 +1,68 @@
+<div class="add-product-section mt-3">
+    <div class="box-head">
+        <h1 class="pr-name">Add a new Products</h1>
+        <button type="button" (click)="cancel()" class="btn btn-outline-primary" id="x"><i
+                class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="row g-3">
+            <div class="form-group" id="labelName">
+                <label for="productName" class="form-label">Product name</label>
+                <input type="text" formControlName="productName" class="form-control" id="pn">
+            </div>
+            <div class="form-group" id="labelName">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" formControlName="description" class="form-control" id="ds">
+            </div>
+            <div class="form-group" id="labelName">
+                <label for="category" class="form-label">Product Category</label>
+                <select formControlName="category" class="form-control" id="pc">
+                    <option>Vegetables</option>
+                    <option>Fruits</option>
+                    <option>Meat</option>
+                    <option>Fish</option>
+                    <option>Beverages</option>
+                    <option>Chilled</option>
+                    <option>Frozen Food</option>
+                    <option>Grocery</option>
+                </select>
+            </div>
+            <div class="form-group" id="labelName">
+                <label for="brand" class="form-label">Brand Name</label>
+                <input type="text" formControlName="brand" class="form-control" id="bn">
+            </div>
+            <div class="form-group" id="labelName">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="expiredDate" class="form-label">Expired Date</label>
+                        <input type="date" formControlName="expiredDate" class="form-control" id="ed">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="manufacturedDate" class="form-label">Manufactured Date</label>
+                        <input type="date" formControlName="manufacturedDate" class="form-control" id="md">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="labelName">
+                <label for="batchNumber" class="form-label">Batch Number</label>
+                <input type="text" formControlName="batchNumber" class="form-control" id="ban">
+            </div>
+            <div class="form-group" id="labelName">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="unitPrice" class="form-label">Unit Price</label>
+                        <input type="number" formControlName="unitPrice" class="form-control" id="up">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="quantity" class="form-label">Quantity in Kgs</label>
+                        <input type="number" formControlName="quantity" class="form-control" id="qa">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-outline-primary" id="submit">Submit<i *ngIf="isDataUploading"
+                        class="fa-solid fa-spinner fa-spin-pulse"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
